@@ -28,7 +28,7 @@ const SendEmail = () => {
 
     const handleConfirm = async () => {
         try {
-            const res = await fetch(`/api/test/${state.testId}/confirm`, {
+            const res = await fetch(`https://email-backend-u29t.onrender.com/api/test/${state.testId}/confirm`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" }
             });

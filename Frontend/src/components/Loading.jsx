@@ -11,7 +11,7 @@ const Loading = () => {
     useEffect(() => {
         const checkResults = async () => {
             try {
-                const response = await fetch(`/api/check/${state.testId}`, { method: 'POST' });
+                const response = await fetch(`https://email-backend-u29t.onrender.com/api/check/${state.testId}`, { method: 'POST' });
                 const data = await response.json();
                 if (!response.ok) throw new Error(data.error);
                 if (data.results) {

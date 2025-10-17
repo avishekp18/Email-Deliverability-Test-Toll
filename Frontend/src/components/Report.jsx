@@ -26,7 +26,7 @@ const Report = () => {
 
     const fetchReport = async (id) => {
         try {
-            const response = await fetch(`/api/report/${id}`);
+            const response = await fetch(`https://email-backend-u29t.onrender.com/api/report/${id}`);
             if (!response.ok) {
                 const text = await response.text();
                 throw new Error(`HTTP error! status: ${response.status}, message: ${text}`);

@@ -20,7 +20,7 @@ const StartTest = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('/api/test', {
+            const response = await fetch('https://email-backend-u29t.onrender.com/api/test', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userEmail: email }),
