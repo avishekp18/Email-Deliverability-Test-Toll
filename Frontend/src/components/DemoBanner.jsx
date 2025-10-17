@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { FiInstagram, FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi"; // Import icons from react-icons/fi
 
 /**
  * DemoBanner props:
@@ -33,9 +34,40 @@ const COLOR_CLASSES = {
     },
 };
 
+const socialLinks = [
+    {
+        icon: <FiInstagram className="w-5 h-5" />,
+        url: "https://www.instagram.com/avishekiapi/",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        name: "Instagram",
+    },
+    {
+        icon: <FiFacebook className="w-5 h-5" />,
+        url: "https://www.facebook.com/Avi.p.08",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        name: "Facebook",
+    },
+    {
+        icon: <FiLinkedin className="w-5 h-5" />,
+        url: "https://www.linkedin.com/in/avishek-pradhan0118052002",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        name: "LinkedIn",
+    },
+    {
+        icon: <FiTwitter className="w-5 h-5" />,
+        url: "https://x.com/Avishekp18",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        name: "Twitter",
+    },
+];
+
 export default function DemoBanner({
     id = "demo-banner-hidden", // Kept for reference but not used for persistence
-    message = "Demo — This environment is for demonstration purposes only.",
+    message = "Demo — environment.",
     color = "yellow",
     showIcon = true,
     dismissible = true,
@@ -70,10 +102,10 @@ export default function DemoBanner({
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-12">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                         {showIcon && (
                             <svg
-                                className="h-5 w-5 opacity-90"
+                                className="h-5 w-5 opacity-90 flex-shrink-0"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -87,13 +119,11 @@ export default function DemoBanner({
                                 />
                             </svg>
                         )}
-                        <p className="text-sm font-medium leading-5">{message}</p>
-                        <span
-                            onClick={() => window.open("https://avishekpradhan.netlify.app/", "_blank")}
-                            className="ml-2 inline-block rounded-md px-4 py-2 text-xs font-semibold opacity-90 bg-white/10 cursor-pointer">
-                            Visit My Site
-                        </span>
+                        <p className="text-sm font-medium leading-5 break-words">
+                            {message}
+                        </p>
                     </div>
+
 
                     <div className="flex items-center gap-2">
                         <a
@@ -139,6 +169,27 @@ export default function DemoBanner({
                                 </svg>
                             </button>
                         )}
+                    </div>
+                    {/* Social Links */}
+                    <div className="flex items-center gap-8">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.url}
+                                target={link.target}
+                                rel={link.rel}
+                                className="text-gray-200 hover:text-white transition-colors"
+                                aria-label={link.name}
+                            >
+                                {link.icon}
+                            </a>
+                        ))}
+                        <span
+                            onClick={() => window.open("https://avishekpradhan.netlify.app/", "_blank")}
+                            className="ml-2 inline-block rounded-md px-4 py-2 text-xs font-semibold opacity-90 bg-white/10 cursor-pointer"
+                        >
+                            Visit My Site
+                        </span>
                     </div>
                 </div>
             </div>

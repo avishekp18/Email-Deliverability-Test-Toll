@@ -15,7 +15,7 @@ function AppContent() {
     <>
       <DemoBanner
         id="my-demo-banner"
-        message="Demo environment — data is simulated. Do not use for production."
+        message="Demo Environment — Built by Avishek Pradhan"
         color="blue"
         showIcon
         dismissible
