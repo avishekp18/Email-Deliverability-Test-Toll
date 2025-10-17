@@ -4,7 +4,7 @@ A web app to test email deliverability. Users send an email with a unique code t
 
 ## Live App URL
 
-- [Update with deployment URL](#)
+- [https://email-frontend-puce.vercel.app/](#)
 
 ## Features
 
